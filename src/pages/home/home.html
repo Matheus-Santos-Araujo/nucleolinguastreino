@@ -1,14 +1,26 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="secondary">
     <ion-title>
-      Ionic Blank
+      Núcleo Linguas
     </ion-title>
+    <ion-buttons end>
+      <button (click)="dialoginput()" style = "background-color:#32db64">
+      <ion-icon style="color: white; margin-right: 5px;" name="person"></ion-icon>
+    </button>
+    <button (click)="dialogalert()" style = "background-color:#32db64">
+      <ion-icon style="color: white;" name="information-circle"></ion-icon>
+    </button> 
+  </ion-buttons> 
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-list>
+    <ion-item *ngFor="let idioma of idiomas">
+      <h2>{{idioma.nome}}</h2>
+      <p>R$ {{idioma.preco}}</p>
+    </ion-item>
+  </ion-list>
+  <button ion-button round full (click)="trocatela()" color="secondary">Se inscrever</button>
+  <button ion-button round full (click)="Toast()" color="primary">Dúvidas</button>
 </ion-content>
