@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { InscricaoPage } from '../inscricao/inscricao';
-
+import { Idioma } from '../../models/idioma'
 
 @Component({
   selector: 'page-home',
@@ -11,7 +11,7 @@ import { InscricaoPage } from '../inscricao/inscricao';
 })
 export class HomePage {
 
-  public idiomas;
+  public idiomas : Idioma[];
 
   constructor(public navCtrl: NavController, private alertCtrl: AlertController, private toastCtrl: ToastController) {
       this.idiomas = [
@@ -22,7 +22,7 @@ export class HomePage {
   }
   dialogalert() {
     let alert = this.alertCtrl.create({
-      title: 'As inscricoes acabam dia 20/09',
+      title: 'As inscrições acabam dia 20/09',
       subTitle: 'Procure o elefante branco para realizar o pagamento',
       buttons: ['Fechar']
     });
@@ -45,14 +45,14 @@ export class HomePage {
       ],
       buttons: [
         {
-          text: 'Cancel',
-          role: 'cancel',
+          text: 'Cancelar',
+          role: 'cancelar',
           handler: data => {
             console.log('Cancel clicked');
           }
         },
         {
-          text: 'Login',
+          text: 'Entrar',
         }
       ]
     });
